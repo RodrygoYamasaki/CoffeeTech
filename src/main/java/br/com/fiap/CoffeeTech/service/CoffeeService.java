@@ -35,10 +35,13 @@ public class CoffeeService {
         return coffeeRepository.save(coffee);
     }
 
-    public Coffee update(Long id, Coffee coffee) {
+    public Coffee update(Long id, Coffee coffeeUpdated) {
         log.info("Updating coffee with the id: " + id);
-        getCoffeeById(id);
-        coffee.setId(id);
+        Coffee coffee = getCoffeeById(id);
+        coffee.setName(coffeeUpdated.getName());
+        coffee.setDescription(coffeeUpdated.getDescription());
+        coffee.setPrice(coffeeUpdated.getPrice());
+        coffee.setSize(coffeeUpdated.getSize());
         return coffeeRepository.save(coffee);
     }
 

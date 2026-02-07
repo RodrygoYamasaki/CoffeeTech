@@ -35,10 +35,12 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
-    public Customer update(Long id, Customer customer) {
+    public Customer update(Long id, Customer customerUpdated) {
         log.info("Updating customer with the id: " + id);
-        getCustomerById(id);
-        customer.setId(id);
+        Customer customer = getCustomerById(id);
+        customer.setName(customerUpdated.getName());
+        customer.setEmail(customerUpdated.getEmail());
+        customer.setPhone(customerUpdated.getPhone());
         return customerRepository.save(customer);
     }
 

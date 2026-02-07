@@ -35,10 +35,10 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public Order update(Long id, Order order) {
+    public Order update(Long id, Order orderUpdated) {
         log.info("Updating order with the id: " + id);
-        getOrderById(id);
-        order.setId(id);
+        Order order = getOrderById(id);
+        order.setDate(orderUpdated.getDate());;
         return orderRepository.save(order);
     }
 

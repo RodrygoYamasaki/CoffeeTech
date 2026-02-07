@@ -1,5 +1,7 @@
 package br.com.fiap.CoffeeTech.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,8 @@ public class Order {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private LocalDateTime date;
 
     @ManyToOne
     private Coffee coffee;
