@@ -38,7 +38,9 @@ public class OrderService {
     public Order update(Long id, Order orderUpdated) {
         log.info("Updating order with the id: " + id);
         Order order = getOrderById(id);
-        order.setDate(orderUpdated.getDate());;
+        order.setDate(orderUpdated.getDate());
+        order.setCoffee(orderUpdated.getCoffee());
+        order.setCustomer(orderUpdated.getCustomer());
         return orderRepository.save(order);
     }
 

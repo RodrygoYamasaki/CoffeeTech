@@ -32,6 +32,7 @@ public class Coffee {
     @NotBlank(message = "{coffee.description.notblank}")
     private String description;
 
+    @NotNull(message = "{coffee.price.notnull}")
     @PositiveOrZero(message = "{coffee.price.positiveorzero}")
     private BigDecimal price;
 

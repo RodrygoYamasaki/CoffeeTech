@@ -19,7 +19,7 @@ import br.com.fiap.CoffeeTech.service.CoffeeService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("coffes")
+@RequestMapping("coffees")
 public class CoffeeController {
     
     @Autowired
